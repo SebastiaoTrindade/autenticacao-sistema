@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # Session User
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
+  resources :users, only: [:new, :create]
   
   # Session Login
   root 'sessions#new'

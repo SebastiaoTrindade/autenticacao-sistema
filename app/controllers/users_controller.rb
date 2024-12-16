@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
-   
+  skip_before_action :logged_in_user, only: [:new, :create]  
   layout 'signup'
+    
   def new
-    @user = User.new
+    @user = User.new      
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Usuário cadastrado com sucesso!"
-      redirect_to login_path      
+      redirect_to login_path, notice: "Conta criada com sucesso! Faça login para continuar."
     else
-      flash.now[:danger] = "Erro ao cadastrar usuário!"
       render :new
     end
   end

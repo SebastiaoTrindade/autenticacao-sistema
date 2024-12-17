@@ -28,12 +28,12 @@
       <div class="container-fluid signup">
         <div class="row gx-lg-5 align-items-center">
           <!-- Imagem -->
-          <div class="col-md-6 mb-4 mb-md-0 text-center">
+          <div class="col-md-6 col-sm-12 text-center mb-4">
             <img src="https://mspublicschoolpremnagar.com/login/images/logo/login.gif" alt="Logo" class="img-fluid">
           </div>
 
           <!-- Formulário -->
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12">
             <h2 class="mb-4">Cadastro de Usuários</h2> 
             <div class="card">
               <div class="card-body py-5 px-md-5">
@@ -54,7 +54,7 @@
                     <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirme sua senha", required: true, minlength: 6 %>                  
                   </div>              
                                     
-                   <%= form.submit "Cadastrar", class: "btn btn-success btn-block mb-4" %>                  
+                  <%= form.submit "Cadastrar", class: "btn btn-success btn-block mb-4" %>                  
                 <% end %>
               </div>
             </div>

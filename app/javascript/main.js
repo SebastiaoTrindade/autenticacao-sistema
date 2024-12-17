@@ -1,12 +1,23 @@
 // Apagar notificação de cadastro
-$(document).on('turbolinks:load', function() {
+$(document).ready(function () {
+  console.log("main.js carregado!");
+
+  // Seleciona o alerta pelo ID 'notice'
   const notice = $('#notice');
+
+  // Verifica se o alerta existe
   if (notice.length) {
-      setTimeout(() => {
-          notice.fadeOut('slow');
-      }, 2000);
+    // Oculta o alerta após 2 segundos
+    setTimeout(() => {
+      notice.fadeOut('slow', () => {
+        notice.remove(); // Remove o alerta do DOM após o fadeOut
+      });
+    }, 2000);
   }
 });
+
+
+
 
 
   

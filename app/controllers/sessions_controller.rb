@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in(user)
+      flash[:notice] = "Login realizado com sucesso!"
       redirect_to dashboard_path
     else
-      flash.now[:danger] = 'Email ou senha inválidos'
+      flash[:alert] = "Email ou senha inválidos."
       render 'new'
     end
   end

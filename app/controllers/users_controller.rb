@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, notice: "Conta criada com sucesso! Faça login para continuar."
+      flash[:success] = "Usuário cadastrado com sucesso!"
+      redirect_to login_path
     else
+      flash.now[:danger] = "Erro ao cadastrar o usuário. Verifique os dados e tente novamente."
       render :new
     end
   end

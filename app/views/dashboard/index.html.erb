@@ -1,2 +1,6 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Dashboard do Sistema</h1>
+
+<%= form_with url: logout_path, method: :delete, class: "d-inline" do %>
+  <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+<% end %>
+

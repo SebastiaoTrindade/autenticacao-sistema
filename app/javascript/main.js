@@ -16,10 +16,40 @@ $(document).ready(function () {
   }
 });
 
+// Validar os campos do login
+document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.getElementById("submit-button");
+  const emailField = document.getElementById("email");
 
+  submitButton.addEventListener("click", function (event) {
+      const email = emailField.value.trim(); // Valor do campo Email
+      const passwordField = document.querySelector('input[type="password"]');
+      const password = passwordField.value.trim(); // Valor do campo Senha
 
+      if (!email || !password) {
+          event.preventDefault(); // Impede o envio do formulário
 
+          // Remove o alerta existente para evitar duplicação
+          const existingAlert = document.getElementById("custom-alert");
+          if (existingAlert) existingAlert.remove();
 
-  
+          // Cria o alerta
+          const alertDiv = document.createElement("div");
+          alertDiv.className = "alert alert-danger";
+          alertDiv.id = "custom-alert";
+          alertDiv.textContent = "Por favor, preencha o campo de login.";
 
- 
+          // Insere o alerta no topo da página
+          const body = document.body;
+          body.insertBefore(alertDiv, body.firstChild);
+
+          // Move o cursor para o campo Email
+          emailField.focus();
+
+          // Remove o alerta após 2 segundos
+          setTimeout(() => {
+              alertDiv.remove();
+          }, 2000);
+      }
+  });
+});

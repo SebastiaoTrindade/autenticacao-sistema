@@ -33,7 +33,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <%= f.text_field :email, class: "form-control", placeholder: "Email", required: true %>                        
+                            <%= f.text_field :email, id: "email", class: "form-control", placeholder: "Email", required: true %>                        
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -45,7 +45,7 @@
                             <%= f.check_box :remember_me %> Lembrar a senha
                         </div>
                         <div class="form-group">
-                            <%= f.submit "Entrar", class: "btn float-right login_button" %>
+                            <%= f.submit "Entrar", id: "submit-button", class: "btn float-right login_button" %>
                         </div>
                     <% end %>                
                 </div>

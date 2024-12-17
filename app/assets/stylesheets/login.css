@@ -88,6 +88,18 @@ color: white;
 margin-left: 4px;
 }
 
+#notice {
+   transition: opacity 1s ease-out; /* Animação suave */
+}
+
+#custom-alert {
+    width: 100%;
+    position: relative; /* Permite posicionamento no layout atual */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens extras */
+    border-radius: 0; /* Remove bordas arredondadas para alinhar às extremidades */
+    z-index: 1050; /* Garante que o alerta fique acima de outros elementos */
+}
 
   
 

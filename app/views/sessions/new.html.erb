@@ -8,27 +8,31 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <% if flash[:notice] %>
-        <div id="notice" class="alert alert-success">
-            <%= flash[:notice] %>
-        </div>
-    <% elsif flash[:alert] %>
-        <div id="notice" class="alert alert-danger">
-            <%= flash[:alert] %>
-        </div>
+<body>    
+    <div id="alert-container"> 
+        <% if flash[:notice] %>
+            <div id="notice" class="alert alert-success">
+                <%= flash[:notice] %>
+            </div>
+        <% elsif flash[:alert] %>
+            <div id="notice" class="alert alert-danger">
+                <%= flash[:alert] %>
+            </div>
     <% end %>
+        
+    </div>
+
     <div id="login">        
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <div id="login-form" class="form" action="" method="post">
+                        <div id="login-form" class="form">
                             <%= form_with url: login_path, scope: :session, method: :post, class: "form" do |f| %>
-                                <h3 class="text-center text-info mb-4">Controle de Veículos</h3>
+                                <h3 class="text-center text-info mb-4">Login Rails 7</h3>
                                     <div class="form-group">
                                         <%= f.label :email, "Email:", class: "text-info" %><br>
-                                        <%= f.text_field :email, class: "form-control", id: "username" %>
+                                        <%= f.text_field :email, id: "email", class: "form-control" %>
                                     </div>
                                     <div class="form-group">
                                         <%= f.label :password, "Senha:", class: "text-info" %><br>
@@ -38,7 +42,7 @@
                                         <%= f.check_box :remember_me, id: "remember-me" %>
                                         <%= f.label :remember_me, "Lembrar a senha", class: "text-info" %>
                                         <br>
-                                        <%= f.submit "Entrar", class: "btn btn-info btn-md mt-3" %>
+                                        <%= f.submit "Entrar", id: "submit-button", class: "btn btn-info btn-md mt-3" %>
                                     </div>
                                     <div id="register-link" class="text-right">
                                         <%= link_to "Registre aqui", signup_path, class: "text-info" %>

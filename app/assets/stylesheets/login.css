@@ -20,3 +20,9 @@ body {
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -103px;
   }
+
+  #notice {
+    transition: opacity 1s ease-out; 
+  }
+
+  

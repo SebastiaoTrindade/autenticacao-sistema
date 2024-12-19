@@ -8,13 +8,21 @@
 
 </head>
 <body>
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Dashboard do Sistema</h1>
+
+    <div class="col-md-6 col-sm-6 text-center mb-4">
+      <img src="https://i.gifer.com/75ez.gif" alt="Logo" class="img-fluid">
+    </div>
+
+    <%= form_with url: logout_path, method: :delete, class: "d-inline" do %>
+      <button type="submit" class="btn btn-danger">Logout</button>
+    <% end %>
+
+
+  </div>
   
-  <h1>Dashboard do Sistema</h1>
-
-  <%= form_with url: logout_path, method: :delete, class: "d-inline" do %>
-    <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
-  <% end %>
-
+  
 
 
 

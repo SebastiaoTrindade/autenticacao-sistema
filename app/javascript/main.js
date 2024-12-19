@@ -12,7 +12,7 @@ $(document).ready(function () {
       notice.fadeOut('slow', () => {
         notice.remove(); // Remove o alerta do DOM após o fadeOut
       });
-    }, 2000);
+    }, 1000);
   }
 });
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Remove o alerta após 2 segundos
           setTimeout(() => {
               alertDiv.remove();
-          }, 2000);
+          }, 1000);
       }
   });
 });

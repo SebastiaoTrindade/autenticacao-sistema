@@ -7,6 +7,9 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>    
     <div id="alert-container"> 
@@ -29,23 +32,29 @@
                     <div id="login-box" class="col-md-12">
                         <div id="login-form" class="form">
                             <%= form_with url: login_path, scope: :session, method: :post, class: "form" do |f| %>
-                                <h3 class="text-center text-info mb-4">Login Rails 7</h3>
-                                    <div class="form-group">
-                                        <%= f.label :email, "Email:", class: "text-info" %><br>
+                                <h3 class="text-center mb-5">Login Rails 7</h3>
+                                    <div class="input-group form-group mb-4">   
+                                        
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
                                         <%= f.text_field :email, id: "email", class: "form-control" %>
                                     </div>
-                                    <div class="form-group">
-                                        <%= f.label :password, "Senha:", class: "text-info" %><br>
-                                        <%= f.password_field :password, class: "form-control mb-4", id: "password" %>
-                                    </div>
+                                    <div class="input-group form-group">   
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        <%= f.password_field :password, class: "form-control mb-0", id: "password" %>
+                                    </div> 
+                                    <br>                                   
                                     <div class="form-group">
                                         <%= f.check_box :remember_me, id: "remember-me" %>
-                                        <%= f.label :remember_me, "Lembrar a senha", class: "text-info" %>
+                                        <%= f.label :remember_me, "Lembrar a senha", class: "text-white" %>
                                         <br>
-                                        <%= f.submit "Entrar", id: "submit-button", class: "btn btn-info btn-md mt-3" %>
+                                        <%= f.submit "Entrar", id: "submit-button", class: "btn btn-warning btn-md mt-3" %>
                                     </div>
                                     <div id="register-link" class="text-right">
-                                        <%= link_to "Registre aqui", signup_path, class: "text-info" %>
+                                        <%= link_to "Registre aqui", signup_path, class: "text-white" %>
                                     </div>
                             <% end %>
                         </div>
